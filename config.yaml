@@ -2,7 +2,7 @@ rpcUrl: "https://mainnet.helius-rpc.com/?api-key="
 wssUrl: "wss://mainnet.helius-rpc.com/?api-key="
 nonceAccount: "DvN7DSowbwqN1CdDYmMo5Hx6RRJr5ha9qLruFQfLyZ3t"
 testCount: 50
-timeout: 30
+timeout: 31
 outputPath: "results"
 logFilePath: "logs"
 logLevel: "info"
