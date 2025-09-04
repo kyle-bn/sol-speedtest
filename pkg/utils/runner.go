@@ -129,6 +129,7 @@ func (r *TestRunner) RunTests() error {
 	r.logger.Info("Initializing test run with %d providers", len(r.providerConfig))
 
 	var wg sync.WaitGroup
+    
 	for name, cfg := range r.providerConfig {
 		providerLogger := r.logger.WithProvider(name)
 		providerLogger.Info("Setting up provider with %d endpoints", len(cfg.Endpoints))
@@ -192,7 +193,7 @@ func (r *TestRunner) RunTests() error {
 			requestChan := make(chan NonceRequest, r.config.TestCount)
 			endpointChannels[endpointKey] = requestChan
 
-			wg.Add(1)
+			
 			go r.endpointWorker(cli, endpointInfo, cfg.AntiMev, requestChan, &wg)
 		}
 	}
